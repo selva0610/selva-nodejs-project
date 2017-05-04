@@ -1,10 +1,8 @@
 var chalk = require('chalk');
 var mongoose = require( 'mongoose' );
 
-//var dbURI = 'mongodb://localhost/employee_details';
-var dbURI = 'mongodb://senthil:senthil@ds129031.mlab.com:29031/employee';
-
-mongoose.connect(dbURI);
+var dbURI = 'mongodb://selva:selva@ds117271.mlab.com:17271/selva';
+mongoose.connect(dbURI, {server:{auto_reconnect:true}});
 
 mongoose.connection.on('connected', function () {
   console.log(chalk.green('Mongoose connected to ' + dbURI));
